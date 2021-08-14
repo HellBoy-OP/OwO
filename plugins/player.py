@@ -1,24 +1,3 @@
-#MIT License
-
-#Copyright (c) 2021 SUBIN
-
-#Permission is hereby granted, free of charge, to any person obtaining a copy
-#of this software and associated documentation files (the "Software"), to deal
-#in the Software without restriction, including without limitation the rights
-#to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#copies of the Software, and to permit persons to whom the Software is
-#furnished to do so, subject to the following conditions:
-
-#The above copyright notice and this permission notice shall be included in all
-#copies or substantial portions of the Software.
-
-#THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#SOFTWARE.
 import os
 from youtube_dl import YoutubeDL
 from config import Config
@@ -67,7 +46,7 @@ async def yplay(_, message: Message):
     if ADMIN_ONLY == "Y":
         admins = await mp.get_admins(CHAT)
         if message.from_user.id not in admins:
-            m=await message.reply_sticker("CAADBQADsQIAAtILIVYld1n74e3JuQI")
+            m=await message.reply_sticker("CAADAQADLAIAAoBBAUR6XLuOjoL02wI")
             await mp.delete(m)
             await mp.delete(message)
             return
@@ -100,7 +79,7 @@ async def yplay(_, message: Message):
                 type="query"
                 ysearch=query
         else:
-            d=await message.reply_text("You Didn't gave me anything to play. Send me a audio file or reply /play to an audio file.")
+            d=await message.reply_text("Nothing to play....")
             await mp.delete(d)
             await mp.delete(message)
             return
@@ -154,8 +133,8 @@ async def yplay(_, message: Message):
         if not playlist:
             pl = f"{emoji.NO_ENTRY} Empty playlist"
         else:   
-            pl = f"{emoji.PLAY_BUTTON} **Playlist**:\n" + "\n".join([
-                f"**{i}**. **🎸{x[1]}**\n   👤**Requested by:** {x[4]}"
+            pl = f"{emoji.PLAY_BUTTON} **Playlist :**\n" + "\n".join([
+                f"**{i}**. **🎸 {x[1]}**\n   👤 **Requested by :** {x[4]}"
                 for i, x in enumerate(playlist)
                 ])
         if EDIT_TITLE:
@@ -256,8 +235,8 @@ async def yplay(_, message: Message):
         if not playlist:
             pl = f"{emoji.NO_ENTRY} Empty playlist"
         else:
-            pl = f"{emoji.PLAY_BUTTON} **Playlist**:\n" + "\n".join([
-                f"**{i}**. **🎸{x[1]}**\n   👤**Requested by:** {x[4]}"
+            pl = f"{emoji.PLAY_BUTTON} **Playlist :**\n" + "\n".join([
+                f"**{i}**. **🎸 {x[1]}**\n   👤**Requested by :** {x[4]}"
                 for i, x in enumerate(playlist)
                 ])
         if EDIT_TITLE:
@@ -280,7 +259,7 @@ async def deezer(_, message):
     if ADMIN_ONLY == "Y":
         admins = await mp.get_admins(CHAT)
         if message.from_user.id not in admins:
-            k=await message.reply_sticker("CAADBQADsQIAAtILIVYld1n74e3JuQI")
+            k=await message.reply_sticker("CAADAQADLAIAAoBBAUR6XLuOjoL02wI")
             await mp.delete(k)
             await mp.delete(message)
             return
@@ -350,8 +329,8 @@ async def deezer(_, message):
     if not playlist:
         pl = f"{emoji.NO_ENTRY} Empty playlist"
     else:
-        pl = f"{emoji.PLAY_BUTTON} **Playlist**:\n" + "\n".join([
-            f"**{i}**. **🎸{x[1]}**\n   👤**Requested by:** {x[4]}"
+        pl = f"{emoji.PLAY_BUTTON} **Playlist :**\n" + "\n".join([
+            f"**{i}**. **🎸 {x[1]}**\n   👤 **Requested by :** {x[4]}"
             for i, x in enumerate(playlist)
             ])
     if message.chat.type == "private":
@@ -377,8 +356,8 @@ async def player(_, m: Message):
         await mp.delete(m)
         return
     else:
-        pl = f"{emoji.PLAY_BUTTON} **Playlist**:\n" + "\n".join([
-            f"**{i}**. **🎸{x[1]}**\n   👤**Requested by:** {x[4]}"
+        pl = f"{emoji.PLAY_BUTTON} **Playlist :**\n" + "\n".join([
+            f"**{i}**. **🎸 {x[1]}**\n   👤 **Requested by :** {x[4]}"
             for i, x in enumerate(playlist)
             ])
     if m.chat.type == "private":
@@ -430,8 +409,8 @@ async def skip_track(_, m: Message):
         if not playlist:
             pl = f"{emoji.NO_ENTRY} Empty playlist"
         else:
-            pl = f"{emoji.PLAY_BUTTON} **Playlist**:\n" + "\n".join([
-            f"**{i}**. **🎸{x[1]}**\n   👤**Requested by:** {x[4]}"
+            pl = f"{emoji.PLAY_BUTTON} **Playlist :**\n" + "\n".join([
+            f"**{i}**. **🎸 {x[1]}**\n   👤 **Requested by :** {x[4]}"
             for i, x in enumerate(playlist)
             ])
         if m.chat.type == "private":
@@ -461,8 +440,8 @@ async def skip_track(_, m: Message):
             if not playlist:
                 pl = f"{emoji.NO_ENTRY} Empty Playlist"
             else:
-                pl = f"{emoji.PLAY_BUTTON} **Playlist**:\n" + "\n".join([
-                    f"**{i}**. **🎸{x[1]}**\n   👤**Requested by:** {x[4]}"
+                pl = f"{emoji.PLAY_BUTTON} **Playlist :**\n" + "\n".join([
+                    f"**{i}**. **🎸 {x[1]}**\n   👤 **Requested by :** {x[4]}"
                     for i, x in enumerate(playlist)
                     ])
             if m.chat.type == "private":
@@ -521,7 +500,7 @@ async def list_voice_chat(client, m: Message):
         chat_id = int("-100" + str(group_call.full_chat.id))
         chat = await client.get_chat(chat_id)
         k=await m.reply_text(
-            f"{emoji.MUSICAL_NOTES} **Currently in the voice chat**:\n"
+            f"{emoji.MUSICAL_NOTES} **Currently in the voice chat :**\n"
             f"- **{chat.title}**"
         )
     else:
@@ -671,8 +650,8 @@ async def show_playlist(_, m: Message):
         await mp.delete(m)
         return
     else:
-        pl = f"{emoji.PLAY_BUTTON} **Playlist**:\n" + "\n".join([
-            f"**{i}**. **🎸{x[1]}**\n   👤**Requested by:** {x[4]}"
+        pl = f"{emoji.PLAY_BUTTON} **Playlist :**\n" + "\n".join([
+            f"**{i}**. **🎸 {x[1]}**\n   👤 **Requested by :** {x[4]}"
             for i, x in enumerate(playlist)
             ])
     if m.chat.type == "private":
@@ -696,13 +675,9 @@ allcmd = ["play", "player", f"play@{U}", f"player@{U}"] + admincmds
 async def not_chat(_, m: Message):
     buttons = [
         [
-            InlineKeyboardButton('⚡️Make Own Bot', url='https://heroku.com/deploy?template=https://github.com/subinps/MusicPlayer'),
-            InlineKeyboardButton('🧩 Source Code', url='https://github.com/subinps/MusicPlayer'),
-        ],
-        [
-            InlineKeyboardButton('How to Make', url='https://youtu.be/iBK-5pP2eHM'),
-            InlineKeyboardButton('👨🏼‍🦯 Help', callback_data='help')       
+            InlineKeyboardButton('Channel', url='https://t.me/its_hellbot'),
+            InlineKeyboardButton('Help', callback_data='help')       
         ]
         ]
-    k=await m.reply("<b>You can't use this bot in this group, for that you have to make your own bot from the [SOURCE CODE](https://github.com/subinps/MusicPlayer) below.</b>", disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(buttons))
+    k=await m.reply("<b>This bot is not allowed to play here..</b>", disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(buttons))
     await mp.delete(m)
