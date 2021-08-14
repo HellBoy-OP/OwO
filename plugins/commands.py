@@ -1,67 +1,13 @@
-#MIT License
-
-#Copyright (c) 2021 SUBIN
-
-#Permission is hereby granted, free of charge, to any person obtaining a copy
-#of this software and associated documentation files (the "Software"), to deal
-#in the Software without restriction, including without limitation the rights
-#to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#copies of the Software, and to permit persons to whom the Software is
-#furnished to do so, subject to the following conditions:
-
-#The above copyright notice and this permission notice shall be included in all
-#copies or substantial portions of the Software.
-
-#THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#SOFTWARE.
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram import Client, filters
-from utils import USERNAME, mp
+from utils import USERNAME as U, mp
 from config import Config
-U=USERNAME
+from .callback import HELP as uwu
+
 CHAT=Config.CHAT
 msg=Config.msg
-HOME_TEXT = "<b>Helo, [{}](tg://user?id={})\n\nIam MusicPlayer 2.0 which plays music in Channels and Groups 24*7.\n\nI can even Stream Youtube Live in Your Voicechat.\n\nDeploy Your Own bot from source code below.\n\nHit /help to know about available commands.</b>"
-HELP = """
-
-<b>Add the bot and User account in your Group with admin rights.
-
-Start a VoiceChat.
-
-Use /play <song name> or use /play as a reply to an audio file or youtube link.
-
-You can also use /dplay <song name> to play a song from Deezer.</b>
-
-**Common Commands**:
-
-**/play**  Reply to an audio file or YouTube link to play it or use /play <song name>.
-**/dplay** Play music from Deezer, Use /dplay <song name>
-**/player**  Show current playing song.
-**/help** Show help for commands
-**/playlist** Shows the playlist.
-
-**Admin Commands**:
-**/skip** [n] ...  Skip current or n where n >= 2
-**/join**  Join voice chat.
-**/leave**  Leave current voice chat
-**/vc**  Check which VC is joined.
-**/stop**  Stop playing.
-**/radio** Start Radio.
-**/stopradio** Stops Radio Stream.
-**/replay**  Play from the beginning.
-**/clean** Remove unused RAW PCM files.
-**/pause** Pause playing.
-**/resume** Resume playing.
-**/volume** Change volume(0-200).
-**/mute**  Mute in VC.
-**/unmute**  Unmute in VC.
-**/restart** Update and restarts the Bot.
-"""
+HOME_TEXT = "<b>Helo, [{}](tg://user?id={})\n\nUse /help to get all commands 😪.</b>"
+HELP = uwu
 
 
 
@@ -69,15 +15,15 @@ You can also use /dplay <song name> to play a song from Deezer.</b>
 async def start(client, message):
     buttons = [
         [
-        InlineKeyboardButton('⚙️ Update Channel', url='https://t.me/subin_works'),
-        InlineKeyboardButton('🤖 Other Bots', url='https://t.me/subin_works/122'),
+        InlineKeyboardButton('Channel', url='https://t.me/its_hellbot'),
+        InlineKeyboardButton('Github', url='https://github.com/The-HellBot'),
     ],
     [
-        InlineKeyboardButton('👨🏼‍💻 Developer', url='https://t.me/subinps'),
-        InlineKeyboardButton('🧩 Source', url='https://github.com/subinps/MusicPlayer'),
+        InlineKeyboardButton('Owner', url='https://t.me/ForGo10god'),
+        InlineKeyboardButton('Source', url='https://t.me/its_hellbot'),
     ],
     [
-        InlineKeyboardButton('👨🏼‍🦯 Help', callback_data='help'),
+        InlineKeyboardButton('Help', callback_data='help'),
         
     ]
     ]
@@ -92,12 +38,12 @@ async def start(client, message):
 async def show_help(client, message):
     buttons = [
         [
-            InlineKeyboardButton('⚙️ Update Channel', url='https://t.me/subin_works'),
-            InlineKeyboardButton('🤖 Other Bots', url='https://t.me/subin_works/122'),
+            InlineKeyboardButton('Channel', url='https://t.me/its_hellbot'),
+            InlineKeyboardButton('Github', url='https://github.com/The-HellBot'),
         ],
         [
-            InlineKeyboardButton('👨🏼‍💻 Developer', url='https://t.me/subinps'),
-            InlineKeyboardButton('🧩 Source', url='https://github.com/subinps/MusicPlayer'),
+            InlineKeyboardButton('Owner', url='https://t.me/ForGo10God'),
+            InlineKeyboardButton('Source', url='https://t.me/its_hellbot'),
         ]
     ]
     reply_markup = InlineKeyboardMarkup(buttons)
