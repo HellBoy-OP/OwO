@@ -1,24 +1,3 @@
-#MIT License
-
-#Copyright (c) 2021 SUBIN
-
-#Permission is hereby granted, free of charge, to any person obtaining a copy
-#of this software and associated documentation files (the "Software"), to deal
-#in the Software without restriction, including without limitation the rights
-#to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#copies of the Software, and to permit persons to whom the Software is
-#furnished to do so, subject to the following conditions:
-
-#The above copyright notice and this permission notice shall be included in all
-#copies or substantial portions of the Software.
-
-#THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#SOFTWARE.
 import asyncio
 from pyrogram import Client, idle, filters
 import os
@@ -80,7 +59,7 @@ bot.send(
         commands=[
             types.BotCommand(
                 command="start",
-                description="Check if bot alive"
+                description="Check if bot is alive"
             ),
             types.BotCommand(
                 command="help",
@@ -88,7 +67,7 @@ bot.send(
             ),
             types.BotCommand(
                 command="play",
-                description="Play song from youtube/audiofile"
+                description="Play song from youtube/mp3file"
             ),
             types.BotCommand(
                 command="dplay",
@@ -112,15 +91,15 @@ bot.send(
             ),
             types.BotCommand(
                 command="leave",
-                description="Leave from VC"
+                description="Leave VC"
             ),
             types.BotCommand(
                 command="vc",
-                description="Ckeck if VC is joined"
+                description="Ckeck VC is joined or not."
             ),
             types.BotCommand(
                 command="stop",
-                description="Stops Playing"
+                description="Stops Playing Song"
             ),
             types.BotCommand(
                 command="radio",
@@ -132,11 +111,11 @@ bot.send(
             ),
             types.BotCommand(
                 command="replay",
-                description="Replay from beggining"
+                description="Replay from beginning"
             ),
             types.BotCommand(
                 command="clean",
-                description="Cleans RAW files"
+                description="Cleans files"
             ),
             types.BotCommand(
                 command="pause",
@@ -148,7 +127,7 @@ bot.send(
             ),
             types.BotCommand(
                 command="mute",
-                description="Mute in VC"
+                description="Mutes in VC"
             ),
             types.BotCommand(
                 command="volume",
